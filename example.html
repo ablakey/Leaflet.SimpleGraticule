@@ -24,22 +24,22 @@
 
 <body>
 	<div id="map"></div>
-
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
 	<script type="text/javascript" src="L.SimpleGraticule.js"></script>
 
 	<script type="text/javascript">
   	var map = L.map('map',{
-      center: [0,0],
-      zoom: 5,
-      crs: L.CRS.Simple
-    });
-    var options = {interval: 20,
-                   showshowOriginLabel: true,
-                   redraw: 'move'};
-
-    L.simpleGraticule(options).addTo(map);
+		center: [0,0],
+		zoom: 5,
+		crs: L.CRS.Simple
+	});
+	var options = {
+		interval: 20,
+	        showshowOriginLabel: true,
+	        redraw: 'move'
+	};
+	
+	L.simpleGraticule(options).addTo(map);
 	</script>
 </body>
 </html>
