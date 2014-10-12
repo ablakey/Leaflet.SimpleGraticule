@@ -26,7 +26,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         this._map = map;
 
         var graticule = this.redraw();
-        this._map.on('viewreset ' + options.redraw, graticule.redraw, graticule);
+        this._map.on('viewreset ' + this.options.redraw, graticule.redraw, graticule);
 
         this.eachLayer(map.addLayer, map);
     },
@@ -37,7 +37,6 @@ L.SimpleGraticule = L.LayerGroup.extend({
     },
 
     redraw: function() {
-        //1. get bounds with some padding
         this._bounds = this._map.getBounds().pad(0.5);
 
         this.clearLayers();
