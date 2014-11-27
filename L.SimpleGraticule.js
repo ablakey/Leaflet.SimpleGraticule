@@ -135,3 +135,5 @@ L.SimpleGraticule = L.LayerGroup.extend({
 L.simpleGraticule = function(options) {
     return new L.SimpleGraticule(options);
 };
+
+module.exports = L.SimpleGraticule;

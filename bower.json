@@ -1,0 +1,22 @@
+{
+  "name": "leaflet-simple-graticule",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ablakey/Leaflet.SimpleGraticule",
+  "authors": [
+    "andrew_blakey <ablakey@clearpathrobotics.com>"
+  ],
+  "description": "A graticule overlay for Leaflet Simple map projection.",
+  "main": "L.SimpleGraticule.js",
+  "keywords": [
+    "Leaflet",
+    "Graticule"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
