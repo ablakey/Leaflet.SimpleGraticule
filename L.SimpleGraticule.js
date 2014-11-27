@@ -3,7 +3,10 @@
  *  Desc: A graticule for Leaflet maps in the L.CRS.Simple coordinate system.
  *  Auth: Andrew Blakey (ablakey@gmail.com)
  */
-L.SimpleGraticule = L.LayerGroup.extend({
+
+var L = require('leaflet');
+
+var SimpleGraticule = L.LayerGroup.extend({
     options: {
         interval: 20,
         showOriginLabel: true,
@@ -131,9 +134,5 @@ L.SimpleGraticule = L.LayerGroup.extend({
         });
     }
 });
-
-L.simpleGraticule = function(options) {
-    return new L.SimpleGraticule(options);
-};
 
 module.exports = L.SimpleGraticule;

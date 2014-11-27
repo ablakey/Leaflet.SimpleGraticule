@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ablakey/Leaflet.SimpleGraticule/issues"
   },
-  "homepage": "https://github.com/ablakey/Leaflet.SimpleGraticule"
+  "homepage": "https://github.com/ablakey/Leaflet.SimpleGraticule",
+  "dependencies": {
+    "leaflet": "^0.7.3"
+  }
 }
