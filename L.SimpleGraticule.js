@@ -135,4 +135,4 @@ var SimpleGraticule = L.LayerGroup.extend({
     }
 });
 
-module.exports = L.SimpleGraticule;
+module.exports = SimpleGraticule;
