@@ -1,0 +1,19 @@
+{
+  "name": "leaflet-simple-graticule",
+  "version": "1.0.0",
+  "description": "Leaflet simple graticule",
+  "main": "L.SimpleGraticule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ablakey/Leaflet.SimpleGraticule.git"
+  },
+  "author": "ablakey@clearpathrobotics.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ablakey/Leaflet.SimpleGraticule/issues"
+  },
+  "homepage": "https://github.com/ablakey/Leaflet.SimpleGraticule"
+}
