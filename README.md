@@ -9,7 +9,7 @@ Adding L.SimpleGraticule:
 
 ```JavaScript
 var options = {interval: 20,
-               showshowOriginLabel: true,
+               showOriginLabel: true,
                redraw: 'move'};
 
 L.simpleGraticule(options).addTo(map);
