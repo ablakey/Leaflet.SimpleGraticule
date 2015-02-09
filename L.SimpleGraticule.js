@@ -8,7 +8,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         interval: 20,
         showOriginLabel: true,
         redraw: 'move',
-		hidden: false
+        hidden: false
     },
 
     lineStyle: {
@@ -37,28 +37,28 @@ L.SimpleGraticule = L.LayerGroup.extend({
         this.eachLayer(this.removeLayer, this);
     },
 
-	hide: function() {
-		this.options.hidden = true;
-		this.redraw();
-	},
-	
-	show: function() {
-		this.options.hidden = false;
-		this.redraw();
-	},
+    hide: function() {
+        this.options.hidden = true;
+        this.redraw();
+    },
+    
+    show: function() {
+        this.options.hidden = false;
+        this.redraw();
+    },
 	
     redraw: function() {
         this._bounds = this._map.getBounds().pad(0.5);
 
         this.clearLayers();
 
-		if (!this.options.hidden) {
-			this.constructLines(this.getMins(), this.getLineCounts());
-
-			if (this.options.showOriginLabel) {
-				this.addLayer(this.addOriginLabel());
-			}
-		}
+        if (!this.options.hidden) {
+            this.constructLines(this.getMins(), this.getLineCounts());
+            
+            if (this.options.showOriginLabel) {
+                this.addLayer(this.addOriginLabel());
+            }
+        }
 		
         return this;
     },
