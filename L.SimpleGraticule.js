@@ -16,6 +16,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         color: '#111',
         opacity: 0.6,
         weight: 1
+        clickable: false
     },
 
     initialize: function(options) {
@@ -41,12 +42,12 @@ L.SimpleGraticule = L.LayerGroup.extend({
         this.options.hidden = true;
         this.redraw();
     },
-    
+
     show: function() {
         this.options.hidden = false;
         this.redraw();
     },
-	
+
     redraw: function() {
         this._bounds = this._map.getBounds().pad(0.5);
 
@@ -54,12 +55,12 @@ L.SimpleGraticule = L.LayerGroup.extend({
 
         if (!this.options.hidden) {
             this.constructLines(this.getMins(), this.getLineCounts());
-            
+
             if (this.options.showOriginLabel) {
                 this.addLayer(this.addOriginLabel());
             }
         }
-		
+
         return this;
     },
 
@@ -127,6 +128,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         }
 
         return L.marker(latLng, {
+            clickable: false,
             icon: L.divIcon({
                 iconSize: [0, 0],
                 className: 'leaflet-grid-label',
@@ -137,6 +139,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
 
     addOriginLabel: function() {
         return L.marker([0, 0], {
+            clickable: false,
             icon: L.divIcon({
                 iconSize: [0, 0],
                 className: 'leaflet-grid-label',
