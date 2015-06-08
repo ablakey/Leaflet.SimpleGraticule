@@ -1,6 +1,6 @@
 {
   "name": "leaflet-simple-graticule",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Leaflet simple graticule",
   "main": "L.SimpleGraticule.js",
   "scripts": {

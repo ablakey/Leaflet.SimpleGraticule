@@ -4,7 +4,9 @@
  *  Auth: Andrew Blakey (ablakey@gmail.com)
  */
 
-var L = require('leaflet');
+if (typeof window.require === 'function') {
+    var L = require('leaflet');
+}
 
 var SimpleGraticule = L.LayerGroup.extend({
     options: {
@@ -135,4 +137,9 @@ var SimpleGraticule = L.LayerGroup.extend({
     }
 });
 
-module.exports = SimpleGraticule;
+if (typeof window.require === 'function') {
+    module.exports = SimpleGraticule;
+}
+else {
+    L.SimpleGraticule = SimpleGraticule;
+}
