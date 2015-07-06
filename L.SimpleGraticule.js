@@ -15,7 +15,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         stroke: true,
         color: '#111',
         opacity: 0.6,
-        weight: 1
+        weight: 1,
         clickable: false
     },
 
