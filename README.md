@@ -11,7 +11,7 @@ Adding L.SimpleGraticule:
 var options = {interval: 20,
                showOriginLabel: true,
                redraw: 'move',
-			   zoomIntervals: [
+               zoomIntervals: [
                 {start: 0, end: 3, interval: 50},
                 {start: 4, end: 5, interval: 5},
                 {start: 6, end: 20, interval: 1}
