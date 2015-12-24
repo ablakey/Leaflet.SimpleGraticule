@@ -8,7 +8,8 @@ L.SimpleGraticule = L.LayerGroup.extend({
         interval: 20,
         showOriginLabel: true,
         redraw: 'move',
-        hidden: false
+        hidden: false,
+	zoomIntervals : []
     },
 
     lineStyle: {
@@ -54,6 +55,16 @@ L.SimpleGraticule = L.LayerGroup.extend({
         this.clearLayers();
 
         if (!this.options.hidden) {
+			
+	    var currentZoom = this._map.getZoom();
+            
+            for(var i = 0 ; i < this.options.zoomIntervals.length ; i++) {
+                if(currentZoom >= this.options.zoomIntervals[i].start && currentZoom <= this.options.zoomIntervals[i].end){
+                    this.options.interval = this.options.zoomIntervals[i].interval;
+                    break;
+                }
+            }
+			
             this.constructLines(this.getMins(), this.getLineCounts());
 
             if (this.options.showOriginLabel) {
