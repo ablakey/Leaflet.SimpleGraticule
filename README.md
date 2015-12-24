@@ -10,7 +10,12 @@ Adding L.SimpleGraticule:
 ```JavaScript
 var options = {interval: 20,
                showOriginLabel: true,
-               redraw: 'move'};
+               redraw: 'move',
+			   zoomIntervals: [
+                {start: 0, end: 3, interval: 50},
+                {start: 4, end: 5, interval: 5},
+                {start: 6, end: 20, interval: 1}
+            ]};
 
 L.simpleGraticule(options).addTo(map);
 ```
@@ -18,6 +23,7 @@ L.simpleGraticule(options).addTo(map);
 - interval: The spacing in map units between horizontal and vertical lines.
 - showOriginLabel: true Whether or not to show '(0,0)' at the origin.
 - redraw: on which map event to redraw the graticule. On `move` is default but `moveend` can be smoother.
+- zoomIntervals: use different intervals in different zoom levels. If not specified, all zoom levels use value in interval option.
 
 Notes
 -----
