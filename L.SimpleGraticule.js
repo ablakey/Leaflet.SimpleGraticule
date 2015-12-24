@@ -9,7 +9,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         showOriginLabel: true,
         redraw: 'move',
         hidden: false,
-		zoomIntervals : []
+	zoomIntervals : []
     },
 
     lineStyle: {
@@ -56,7 +56,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
 
         if (!this.options.hidden) {
 			
-			var currentZoom = this._map.getZoom();
+	    var currentZoom = this._map.getZoom();
             
             for(var i = 0 ; i < this.options.zoomIntervals.length ; i++) {
                 if(currentZoom >= this.options.zoomIntervals[i].start && currentZoom <= this.options.zoomIntervals[i].end){
