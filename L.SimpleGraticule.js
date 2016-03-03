@@ -100,6 +100,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         //for horizontal lines
         for (var i = 0; i <= counts.x; i++) {
             var x = mins.x + i * this.options.interval;
+            if(Math.abs(x) > 360) continue;
             lines[i] = this.buildXLine(x);
             labels[i] = this.buildLabel('gridlabel-horiz', x);
         }
@@ -116,15 +117,15 @@ L.SimpleGraticule = L.LayerGroup.extend({
     },
 
     buildXLine: function(x) {
-        var bottomLL = new L.LatLng(this._bounds.getSouth(), x);
-        var topLL = new L.LatLng(this._bounds.getNorth(), x);
+        var bottomLL = new L.LatLng(-180, x);
+        var topLL = new L.LatLng(180, x);
 
         return new L.Polyline([bottomLL, topLL], this.lineStyle);
     },
 
     buildYLine: function(y) {
-        var leftLL = new L.LatLng(y, this._bounds.getWest());
-        var rightLL = new L.LatLng(y, this._bounds.getEast());
+        var leftLL = new L.LatLng(y, -360);
+        var rightLL = new L.LatLng(y,  360);
 
         return new L.Polyline([leftLL, rightLL], this.lineStyle);
     },
