@@ -17,7 +17,8 @@ L.SimpleGraticule = L.LayerGroup.extend({
         color: '#111',
         opacity: 0.6,
         weight: 1,
-        clickable: false
+        interactive: false,
+        clickable: false//legacy support
     },
 
     initialize: function(options) {
