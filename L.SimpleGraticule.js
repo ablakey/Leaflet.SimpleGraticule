@@ -18,7 +18,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         opacity: 0.6,
         weight: 1,
         interactive: false,
-        clickable: false//legacy support
+        clickable: false //legacy support
     },
 
     initialize: function(options) {
@@ -141,7 +141,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
 
         return L.marker(latLng, {
             interactive: false,
-            clickable: false,//legacy support
+            clickable: false, //legacy support
             icon: L.divIcon({
                 iconSize: [0, 0],
                 className: 'leaflet-grid-label',
@@ -153,7 +153,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
     addOriginLabel: function() {
         return L.marker([0, 0], {
             interactive: false,
-            clickable: false,//legacy support
+            clickable: false, //legacy support
             icon: L.divIcon({
                 iconSize: [0, 0],
                 className: 'leaflet-grid-label',
