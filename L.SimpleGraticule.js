@@ -156,6 +156,8 @@ L.SimpleGraticule = L.LayerGroup.extend({
     },
 	
 	degToDms: function (deg) {
+       var multiplier = (deg < 0)?-1:1;
+       deg = Math.abs(deg);
 	   var vecAux = new Array();
 	   var d = Math.floor (deg);
 	   var minfloat = (deg-d)*60;
