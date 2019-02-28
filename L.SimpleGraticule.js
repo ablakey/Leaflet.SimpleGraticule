@@ -9,6 +9,7 @@ L.SimpleGraticule = L.LayerGroup.extend({
         showOriginLabel: true,
         redraw: 'move',
         hidden: false,
+		labelsFormat: 'dms', //Posibles options: decimal or dms
         zoomIntervals : []
     },
 
@@ -138,6 +139,10 @@ L.SimpleGraticule = L.LayerGroup.extend({
         } else {
             latLng = new L.LatLng(val, bounds.getWest());
         }
+		
+		if (this.options.labelsFormat == 'dms') {
+			val = this.degToDms(val);
+		}
 
         return L.marker(latLng, {
             interactive: false,
@@ -149,6 +154,38 @@ L.SimpleGraticule = L.LayerGroup.extend({
             })
         });
     },
+	
+	degToDms: function (deg) {
+       var multiplier = (deg < 0)?-1:1;
+       deg = Math.abs(deg);
+	   var vecAux = new Array();
+	   var d = Math.floor (deg);
+	   var minfloat = (deg-d)*60;
+	   var m = Math.floor(minfloat);
+	   var secfloat = (minfloat-m)*60;
+	   var s = Math.round(secfloat);
+	   // After rounding, the seconds might become 60. These two
+	   // if-tests are not necessary if no rounding is done.
+	   if (s==60) {
+		 m++;
+		 s=0;
+	   }
+	   if (m==60) {
+		 d++;
+		 m=0;
+	   }
+
+	   vecAux[0] = d + "&deg;";
+	   vecAux[1] = m + "'";
+	   if (m < 10) {
+		vecAux[1] = "0" + m + "'";
+	   }
+	   vecAux[2] = s + "''";
+	   if (s < 10) {
+		vecAux[2] = "0" + s + "''";
+	   }
+	   return vecAux.join('');
+	},
 
     addOriginLabel: function() {
         return L.marker([0, 0], {
